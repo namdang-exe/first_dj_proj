@@ -19,7 +19,8 @@ from django.urls import path, include
 from hello import views
 
 urlpatterns = [
+    path("", views.index, name="homepage"),
     path('admin/', admin.site.urls),
     path("hello/", include("hello.urls")),
-    path("", views.index, name="homepage")
+    path("newyear/", include("newyear.urls"))
 ]
