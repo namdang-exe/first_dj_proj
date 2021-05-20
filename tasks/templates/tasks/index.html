@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tasks</title>
-</head>
-<body>
-    <ul style="font-size: 100px; text-align: center;">
+{% extends "tasks/layout.html" %}
+{% block body %}
+    <h1>Tasks</h1>
+    <ul style="font-size: 50px">
         {% for task in tasks %}
         <li>{{task}}</li>
         {% endfor %}
     </ul>
-</body>
-</html>
+    <a href="{% url "tasks:add" %}">Add a new task</a>
+{% endblock %}
